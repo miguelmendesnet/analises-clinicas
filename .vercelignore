@@ -1,0 +1,8 @@
+node_modules
+.next
+storage/uploads
+storage/analyses.sqlite
+storage/analyses.sqlite-shm
+storage/analyses.sqlite-wal
+tsconfig.tsbuildinfo
+.DS_Store

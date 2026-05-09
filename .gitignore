@@ -1,0 +1,9 @@
+.DS_Store
+.next
+node_modules
+storage/uploads
+storage/analyses.sqlite
+storage/analyses.sqlite-shm
+storage/analyses.sqlite-wal
+tsconfig.tsbuildinfo
+.vercel

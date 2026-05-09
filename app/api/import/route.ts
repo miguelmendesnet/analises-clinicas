@@ -25,6 +25,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ imported });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Falha ao importar PDFs.";
+    console.error("Erro em /api/import:", error);
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }

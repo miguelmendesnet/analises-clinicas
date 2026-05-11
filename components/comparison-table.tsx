@@ -9,10 +9,12 @@ export function ComparisonTable({
   rows,
   selectedAnalyses,
   mode,
+  className,
 }: {
   rows: ComparisonRow[];
   selectedAnalyses: AnalysisRecord[];
   mode: "single" | "compare";
+  className?: string;
 }) {
   const [activeCategory, setActiveCategory] = useState("Tudo");
   const [showOnlyProblems, setShowOnlyProblems] = useState(false);
@@ -56,16 +58,16 @@ export function ComparisonTable({
   }, [activeCategory, categories]);
 
   return (
-    <div className="glass rounded-[28px] p-6">
-      <div className="mb-4 flex items-center justify-between">
+    <div className={cn("glass rounded-[28px] p-5", className)}>
+      <div className="mb-4 flex items-start justify-between gap-4">
         <div>
-          <p className="text-sm uppercase tracking-[0.24em] text-[var(--muted)]">Comparação</p>
-          <h3 className="text-lg font-semibold text-white">
-            {mode === "single" ? "Leitura detalhada de um relatório" : "Três relatórios lado a lado com variação percentual"}
+          <p className="text-[11px] uppercase tracking-[0.24em] text-[var(--muted)]">Comparação</p>
+          <h3 className="mt-1 text-base font-semibold text-white">
+            {mode === "single" ? "Leitura direta do relatório" : "Comparação lado a lado"}
           </h3>
         </div>
       </div>
-      <div className="mb-5 flex flex-wrap gap-2">
+      <div className="mb-4 flex flex-wrap gap-2">
         {categories.map((category) => (
           <button
             key={category}
